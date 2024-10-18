@@ -11,8 +11,7 @@ public class Author {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id", nullable = false)
     private User            user;
-    private String          firstName;
-    private String          lastName;
+    private String          fullName;
     private String          bio;
 
     @ManyToMany
@@ -25,10 +24,9 @@ public class Author {
 
     public Author() {}
 
-    public Author(User user, String firstName, String lastName, String bio) {
+    public Author(User user, String fullName, String bio) {
         this.user = user;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.fullName = fullName;
         this.bio = bio;
     }
 
@@ -40,20 +38,12 @@ public class Author {
         this.user = user;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getBio() {
